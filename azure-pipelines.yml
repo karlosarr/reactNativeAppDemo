@@ -18,6 +18,15 @@ jobs:
     inputs:
       workingDirectory: 'ios/'
       forceRepoUpdate: false
+  - task: Xcode@5
+    inputs:
+      actions: 'build'
+      sdk: 'iphoneos'
+      xcWorkspacePath: 'ios/reactNativeAppDemo.xcodeproj'
+      scheme: 'Release'
+      packageApp: true
+      archivePath: '$(agent.builddirectory)/output/build/archive'
+      exportPath: '$(agent.builddirectory)/output/build/export'
 - job: Android
   pool:
     vmImage: 'ubuntu-latest'
