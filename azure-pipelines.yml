@@ -32,7 +32,6 @@ jobs:
       packageApp: true
       archivePath: '$(agent.builddirectory)/output/build/archive'
       exportPath: '$(agent.builddirectory)/output/build/export'
-  
   - task: CopyFiles@2
     inputs:
       SourceFolder: '$(agent.builddirectory)/output/build/archive'
